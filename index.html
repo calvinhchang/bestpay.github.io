@@ -22,7 +22,7 @@ $(document).ready(function() {
 	barcode.init();
 
 	$('#result').bind('DOMSubtreeModified', function(e) {
-		sound.play();	
+		sound.play();
 	});
 
 });
@@ -32,9 +32,10 @@ $(document).ready(function() {
 </head>
 <body>
 
-<div id="barcode">
+<div>
 	<video id="barcodevideo" autoplay></video>
 	<canvas id="barcodecanvasg" ></canvas>
+	<p id="barcode"></p>
 </div>
 <canvas id="barcodecanvas" ></canvas>
 <div id="result"></div>
