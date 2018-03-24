@@ -231,6 +231,7 @@ var barcode = function() {
 
 		console.log("digits: " + digits);
 		document.getElementById("barcode").textContent = "SPK Model Scanned: 10272694";
+		location.href = "./product_page.html";
 
 
 		// determine parity and reverse if necessary
