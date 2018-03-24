@@ -69,7 +69,7 @@ var barcode = function() {
 		elements.ctxg = elements.canvasg.getContext('2d');
 
 		if (navigator.getUserMedia) {
-			navigator.getUserMedia({audio: false, video: true}, function(stream) {
+			navigator.getUserMedia({ audio: true, video: { facingMode: { exact: "environment" } } }, function(stream) {
 				elements.video.src = window.URL.createObjectURL(stream);
 			}, function(error) {
 				console.log(error);
@@ -230,7 +230,7 @@ var barcode = function() {
 		]
 
 		console.log("digits: " + digits);
-		document.getElementById("barcode").textContent = "code scanned: 5 6 9 1 3 2";
+		document.getElementById("barcode").textContent = "SPK Model Scanned: 10272694";
 
 
 		// determine parity and reverse if necessary
