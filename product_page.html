@@ -56,18 +56,27 @@
 
                   <button class="accordion">Reviews</button>
                   <div class="panel">
+                    <h3>Total Ratings</h3>
+                    <p id="totalRatings"></p>
+
+                    <h3>Total Reviews</h3>
+                    <p id="totalReviews"></p>
+
+                    <h3>Average Rating</h3>
+                    <p id="avgRating"></p>
+
+                    <h3>Customer Reviews</h3>
+                    <p id="reviews"></p>
                   </div>
 
                   <button class="accordion">Specifications</button>
                   <div class="panel">
                     <h3>Specifications</h3>
-                    <p id="specifications1"></p>
+                    <p id="specifications"></p>
                   </div>
 
                   <button class="accordion">Compare</button>
                   <div class="panel">
-                    <h3>Specifications</h3>
-                    <p id="specifications1"></p>
                   </div>
               </div>
 
@@ -99,33 +108,60 @@
 
     </div>
 </body>
+<script src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
 
-var json = {"overview":{"attributes":{"lowPriceGuaranteedProduct":true},"availability":null,"properties":{"format":"physical","freeShippingCode":"","platform":""},"brand":{"publisher":"","label":"","vendor":""},"customerRatings":{"averageRating":{"percent0To100":84,"score":4.2},"averageWouldRecommend":null,"totalCount":17},"dates":{"streetDate":""},"descriptions":{"short":"Whether you're in the club or the studio, Beats Pro headphones are built to stand up to frequent use. They'll also enhance your listening experience, as they deliver superb sound and deep bass response.","long":"<ul><li>Clear highs and deep lows</li><li>Practically indestructible</li><li>True noise reduction</li></ul>"},"esrbRating":{"rating":""},"media":{"primaryImage":{"height":500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/500x500/102/10272/10272694.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/500x500/102/10272/10272694.jpg","width":500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694.jpg"},"listImage":{"height":250,"path":"https://multimedia.bbycastatic.ca/multimedia/products/250x250/102/10272/10272694.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/250x250/102/10272/10272694.jpg","width":250,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694.jpg"},"galleryImages":[{"height":1500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694.jpg","width":1500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694.jpg"},{"height":1500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_1.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_1.jpg","width":1500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694_1.jpg"},{"height":1500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_2.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_2.jpg","width":1500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694_2.jpg"},{"height":1500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_3.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_3.jpg","width":1500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694_3.jpg"},{"height":1500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_4.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_4.jpg","width":1500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694_4.jpg"},{"height":1500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_5.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_5.jpg","width":1500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694_5.jpg"},{"height":1500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_6.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_6.jpg","width":1500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694_6.jpg"},{"height":1500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_7.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_7.jpg","width":1500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694_7.jpg"},{"height":1500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_8.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_8.jpg","width":1500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694_8.jpg"},{"height":1500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_9.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_9.jpg","width":1500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694_9.jpg"},{"height":1500,"path":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_10.jpg","url":"https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/102/10272/10272694_10.jpg","width":1500,"thumbnailUrl":"https://multimedia.bbycastatic.ca/multimedia/products/100x100/102/10272/10272694_10.jpg"}]},"meta":{"description":"Whether you're in the club or the studio, Beats Pro headphones are built to stand up to frequent use. They'll also enhance your listening experience, as they deliver superb sound and deep bass response.","title":"Beats by Dr. Dre Pro Over-Ear Sound Isolating Headphones (900-00175-01) - Black"},"names":{"short":"Beats by Dr. Dre Pro Over-Ear Sound Isolating Headphones (900-00175-01) - Black"},"parentCategory":{"displayName":"","categoryId":""},"manufacturerId":{"modelNumber":"900-00175-01"},"specialOffers":[],"active":true,"condition":"new","productId":"10272694","productType":"hardgood","skuId":"10272694","url":"https://www.bestbuy.ca/en-ca/product/beats-by-dr-dre-beats-by-dr-dre-pro-over-ear-sound-isolating-headphones-900-00175-01-black-900-00175-01/10272694.aspx","seller":null,"breadcrumb":[],"color":{"displayName":"Gray"},"features":[],"includedItems":[],"priceBlock":{"itemPrice":{"priceEventType":"onsale","regularPrice":479.99,"currentPrice":359.99,"customerPrice":359.99,"totalSavings":120.00,"totalSavingsPercent":25.000520844184255,"priceHidden":false,"currentRegion":null,"ehf":0.0,"saleEndDate":"March 25, 2018 PDT"},"buttonState":{"buttonStateID":"ADD_TO_CART","displayName":"Add to Cart","purchasable":true,"availabilityType":"addToCart"},"caButtonStateBlock":{"cartButtonState":{"buttonText":"Add To Cart","enabled":true,"visible":true},"reservePickUpButtonState":{"buttonText":"Cannot Reserve","enabled":false,"visible":true}}},"caAvailability":{"pickup":{"status":"NotAvailable","purchasable":false,"locations":[],"pickupSiAnalysis":{"siPickupMessage":"Store stock information is not available at this time.","siPickupExtraMessage":"","siEnableReserveButton":false}},"shipping":{"status":"InStock","quantityRemaining":56,"purchasable":true,"orderLimit":3,"restrictedZoneRegions":[],"freeShippingThreshold":35,"hasActiveCountdown":true,"countdownIsZone":false,"preorderInfo":null,"levelsOfServices":[],"isFreeShippingEligible":true,"isBackorderable":false,"shippingSiAnalysis":{"siStatusString":"In Stock","siOnlineAvailabilityString":"Limited quantities available.","siAddToCartButtonEnabled":true,"siExtraMessage":"Household Limit: 3","siCheapestDeliveryDate":null,"siDeliveryMessage":null,"siCheapestDeliveryExpiresDate":null,"siDeliveryExpiresMessage":null}},"sku":"10272694","saleChannelExclusivity":"InStoreAndOnline","scheduledDelivery":false,"isGiftCard":false,"isService":false},"hasWarranty":true,"warranties":[{"parentSku":"10272694","sku":"10394905","title":"2 Year Audio Accessory Geek Squad Protection Replacement Plan","type":"PRP","subType":"","termMonths":24,"regularPrice":84.99,"shortTitle":"2 Year Plan","manufacturerWarrantyUrl":"https://www.bestbuy.ca/en-CA/warranty-terms-and-conditions.aspx?WarrantyId=10394905&Sku=10272694","inHome":false,"inStore":false,"termConditionUrl":"https://www.bestbuy.ca/en-CA/warranty-terms-and-conditions.aspx?WarrantyId=10394905&Sku=10272694"}],"warrantyBenefitsMessages":[{"articleId":"RC9515","associationLevel":"","type":"WarrantyBenefits","warrantyType":"PRP","title":"Do you want to protect your new headphones?","benefits":[{"description":"Coverage for cable wear & tear","imageUrl":"cable"},{"description":"Covered for crackling, distortion, one ear not working","imageUrl":"audio"},{"description":"Full replacement coverage for any hardware defects","imageUrl":"replace"},{"description":"Get a gift card for the original purchase price","imageUrl":"giftcard"}],"description":"Never wait for a repair! You'll get a brand new replacement.","articleBody":"PRP Headphones ENG - BBY♫"}],"specifications":[{"displayName":"Headphone Style","value":"Over-Ear","definition":""},{"displayName":"Band Style","value":"Over-the-Head","definition":""},{"displayName":"Sports & Fitness Ear Clip","value":"No","definition":""},{"displayName":"Sound Isolating","value":"Yes","definition":""},{"displayName":"Noise Cancelling","value":"No","definition":""},{"displayName":"Wireless","value":"No","definition":""},{"displayName":"RF Wireless","value":"No","definition":""},{"displayName":"NFC Ready","value":"No","definition":""},{"displayName":"Designed for Sports","value":"No","definition":""},{"displayName":"Designed for Kids","value":"No","definition":""},{"displayName":"DJ Style","value":"No","definition":""},{"displayName":"Professional Grade","value":"Yes","definition":""},{"displayName":"Water/Sweat Resistant","value":"No","definition":""},{"displayName":"Inline Volume Control","value":"Yes","definition":""},{"displayName":"iPod/iPhone Control","value":"No","definition":""},{"displayName":"Built-in Mic","value":"Yes","definition":""},{"displayName":"Folding","value":"Yes","definition":""},{"displayName":"Cord Length","value":"0.92m","definition":""},{"displayName":"Plug Material","value":"Gold","definition":""},{"displayName":"Plug Size","value":"3.5 mm","definition":""},{"displayName":"Plug Shape","value":"Right Angled","definition":""},{"displayName":"Ear Cushion Material","value":"Leatherette","definition":""},{"displayName":"Colour","value":"Black","definition":""},{"displayName":"Weight","value":"400 g","definition":""}],"subSections":[{"id":"specifications","displayName":"Specifications"}]},"largeProductAvailability":{"isHomeDeliveryEligible":true}};
+var ID = 10272694;
+var address = "https://bizhacks.bbycastatic.ca/mobile-si/si/v4/pdp/overview/" + ID + "?lang=en";
 
-var sjson = JSON.stringify(json);
+$.ajax({
+  url: address,
+  dataType: 'text',
+  success: function(data) {
+    obj = JSON.parse(data);
+    document.getElementById("productName").innerText = obj.overview.names.short;
+    document.getElementById("productDesc").innerText = obj.overview.meta.description;
+    //document.getElementById("productId").innerText = obj.overview.productId;
+    //document.getElementById("condition").innerText = obj.overview.condition;
+    //document.getElementById("productNum").innerText = obj.overview.manufacturerId.modelNumber;
+    //document.getElementById("color").innerText = obj.overview.color.displayName;
+    document.getElementById("regPrice").innerText = "$" + obj.overview.priceBlock.itemPrice.regularPrice;
+    document.getElementById("curPrice").innerText = "$" + obj.overview.priceBlock.itemPrice.currentPrice;
+    document.getElementById("savings").innerText = "$" + obj.overview.priceBlock.itemPrice.totalSavings;
+    document.getElementById("saleEndDate").innerText = obj.overview.priceBlock.itemPrice.saleEndDate;
 
-obj = JSON.parse(sjson);
-document.getElementById("productName").innerText = obj.overview.names.short;
-document.getElementById("productDesc").innerText = obj.overview.meta.description;
-//document.getElementById("productId").innerText = obj.overview.productId;
-//document.getElementById("condition").innerText = obj.overview.condition;
-//document.getElementById("productNum").innerText = obj.overview.manufacturerId.modelNumber;
-//document.getElementById("color").innerText = obj.overview.color.displayName;
-document.getElementById("regPrice").innerText = "$" + obj.overview.priceBlock.itemPrice.regularPrice;
-document.getElementById("curPrice").innerText = "$" + obj.overview.priceBlock.itemPrice.currentPrice;
-document.getElementById("savings").innerText = "$" + obj.overview.priceBlock.itemPrice.totalSavings;
-document.getElementById("saleEndDate").innerText = obj.overview.priceBlock.itemPrice.saleEndDate;
+    for(i in obj.overview.specifications) {
+      var paragraph = document.getElementById("specifications");
+      paragraph.innerText += obj.overview.specifications[i].displayName + ": " +
+                             obj.overview.specifications[i].value + "\n";
+    }
+  }
+})
+</script>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
 
-for(i in obj.overview.specifications) {
-  var paragraph = document.getElementById("specifications1");
-  paragraph.innerText += obj.overview.specifications[i].displayName + ": " +
-                         obj.overview.specifications[i].value + "\n";
-}
+var ID = 10272694;
+var address = "https://bizhacks.bbycastatic.ca/mobile-si/si/pdp/reviewDetails/" + ID + "?lang=en";
 
+$.ajax({
+  url: address,
+  dataType: 'text',
+  success: function(data) {
+    obj = JSON.parse(data);
+    document.getElementById("totalRatings").innerText = obj.si.response.distilledReviewSummary.totalRatings;
+    document.getElementById("totalReviews").innerText = obj.si.response.totalResults;
+    document.getElementById("avgRating").innerText = obj.si.response.distilledReviewSummary.averageRating;
 
-// console.log(obj.count);
-//
-// console.log(obj.result);
+    for(i in obj.si.response.results) {
+      var paragraph = document.getElementById("reviews");
+      paragraph.innerText += obj.si.response.results[i].title + "\n" +
+                             obj.si.response.results[i].userNickname + "\n" +
+                             new Date(obj.si.response.results[i].submissionTime).toDateString() + "\n" +
+                             "Rating: " + obj.si.response.results[i].rating + "\n\n" +
+                             obj.si.response.results[i].reviewText + "\n\n\n\n";
+    }
+  }
+})
 </script>
 </html>
